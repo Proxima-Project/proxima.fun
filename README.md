@@ -1,68 +1,29 @@
+# proxima.fun
 
-<p align="center">
-	<h2 align="center">
-		<a href="https://github.com/Gesugao-san/infrastructure-template-repository">Infrastructure</a> template
-	</h2>
-	<p align="center">
-		Origin:
-		<a href="https://github.com/BYOND/infrastructure-template-repository">
-			BYOND/infrastructure-template-repository
-		</a>
-	</p>
-</p>
+This template should help get you started developing with Vue 3 in Vite.
 
-<p align="center">
-	<!--
-		Static Badges
-	-->
-	<a href="https://code.visualstudio.com/">
-		<img alt="[Made in VS Code]"
-		src="./.github/static/Made_in-VS_Code-1f425f.svg"/>
-	</a>˙
-	<a href="https://opensource.org/licenses/MIT">
-		<img alt="[License MIT]"
-		src="./.github/static/License-MIT-yellow.svg"/>
-	</a>
-	<br>
-	<!--
-		Dinamic Badges
-		Note: "../.." for escaping "blob/master"
-	-->
-	<a href="./../../actions/workflows/main.yml">
-		<img alt="[CI status]"
-		src="./../../actions/workflows/main.yml/badge.svg"/>
-	</a>˙
-	<a href="./../../commits/">
-		<img alt="[Last Commit]"
-		src="https://img.shields.io/github/last-commit/Gesugao-san/infrastructure-template-repository"/>
-	</a>
-</p>
+## Recommended IDE Setup
 
----
+[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
 
-> [Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis scelerisque aliquam nibh, sed accumsan ipsum malesuada a. Mauris a facilisis erat. ](https://lipsum.com/)
+## Customize configuration
 
-## Table of Contents
+See [Vite Configuration Reference](https://vitejs.dev/config/).
 
-- [Table of Contents](#table-of-contents)
-- [Details](#details)
-- [For contributors](#for-contributors)
+## Project Setup
 
-## Details
+```sh
+npm install
+```
 
-<details>
-	<summary><b>[ Click on me ]</b></summary>
-	Hello there!
-</details>
+### Compile and Hot-Reload for Development
 
-## For contributors
+```sh
+npm run dev
+```
 
- 1. [Contributing](./.github/CONTRIBUTING.md)
- 1. [ToDo list](./.github/TODO.md)
- 1. [Download](./.github/DOWNLOAD.md)
+### Compile and Minify for Production
 
----
-
-<p align="center">
-  <img src="https://2ip.io/bar/ip3.gif"/>
-</p>
+```sh
+npm run build
+```
