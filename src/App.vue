@@ -1,19 +1,28 @@
 <script setup>
 import HelloWorld from './components/HelloWorld.vue'
 import TheWelcome from './components/TheWelcome.vue'
+import OpenDiscord from './components/Open/OpenDiscord.vue'
+import OpenGitHub from './components/Open/OpenGitHub.vue'
+</script>
+
+<script>
 </script>
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+    <img alt='Vue logo' class='logo' src='./assets/logo.svg' width='125' height='125' />
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
+    <!-- <div class='wrapper'>
+      <HelloWorld msg='You did it!' />
+    </div> -->
+    <p>test</p>
   </header>
 
   <main>
-    <TheWelcome />
+    <!-- <TheWelcome /> -->
+    <HelloWorld msg='You did it!' />
+    <OpenDiscord />
+    <OpenGitHub />
   </main>
 </template>
 
