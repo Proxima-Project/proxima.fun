@@ -13,7 +13,10 @@ import ProjectInfo from './components/ProjectInfo.vue'
 <template>
   <header>
     <!-- <img alt='Vue logo' class='logo' src='./assets/logo.svg' width='125' height='125' /> -->
-    <img alt='Vue logo' class='logo' src='./assets/proxima1.gif' width='300' height='300' />
+    <!-- <img alt='Vue logo' class='logo' src='./assets/proxima6.gif' width='300' height='300' /> -->
+    <video autoplay muted loop width='500' height='500'>
+      <source alt='Vue logo' class='logo' src='./assets/proxima5.webm' type='video/webm' />
+    </video>
 
   </header>
 
@@ -36,6 +39,11 @@ header {
 .logo {
   display: block;
   margin: 0 auto 2rem;
+}
+
+
+video {
+  padding: 10px;
 }
 
 @media (min-width: 1024px) {
