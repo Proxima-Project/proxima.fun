@@ -3,6 +3,8 @@ import HelloWorld from './components/HelloWorld.vue'
 import TheWelcome from './components/TheWelcome.vue'
 import OpenDiscord from './components/Open/OpenDiscord.vue'
 import OpenGitHub from './components/Open/OpenGitHub.vue'
+import OpenWiki from './components/Open/OpenWiki.vue'
+import ProjectInfo from './components/ProjectInfo.vue'
 </script>
 
 <script>
@@ -12,17 +14,16 @@ import OpenGitHub from './components/Open/OpenGitHub.vue'
   <header>
     <img alt='Vue logo' class='logo' src='./assets/logo.svg' width='125' height='125' />
 
-    <!-- <div class='wrapper'>
-      <HelloWorld msg='You did it!' />
-    </div> -->
-    <p>test</p>
   </header>
 
   <main>
     <!-- <TheWelcome /> -->
-    <HelloWorld msg='You did it!' />
+    <div class='wrapper'>
+      <HelloWorld :msg='`${ProjectInfo.name}`' />
+    </div>
     <OpenDiscord />
     <OpenGitHub />
+    <OpenWiki />
   </main>
 </template>
 
