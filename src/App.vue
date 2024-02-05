@@ -12,7 +12,8 @@ import ProjectInfo from './components/ProjectInfo.vue'
 
 <template>
   <header>
-    <img alt='Vue logo' class='logo' src='./assets/logo.svg' width='125' height='125' />
+    <!-- <img alt='Vue logo' class='logo' src='./assets/logo.svg' width='125' height='125' /> -->
+    <img alt='Vue logo' class='logo' src='./assets/proxima1.gif' width='300' height='300' />
 
   </header>
 
