@@ -21,19 +21,6 @@ a,
   }
 }
 
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
-
-  #app {
-    display: grid;
-    /* grid-template-columns: 1fr 1fr; */
-    padding: 0 2rem;
-  }
-}
-
 button {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -52,10 +39,6 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
-}
-
-.card {
-  padding: 2em;
 }
 
 #app {
@@ -77,4 +60,22 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+body {
+  display: flex;
+  place-items: center;
+}
+
+header {
+  line-height: 1.5;
+}
+
+video {
+  padding: 10px;
+}
+
+.logo {
+  display: block;
+  margin: 0 auto 2rem;
 }
