@@ -32,32 +32,45 @@
     },
     {
       "type": "npm",
-      "script": "Docker containers",
+      "script": "start",
       "problemMatcher": [],
-      "label": "npm: Docker containers",
-      "detail": "docker containers"
+      "label": "npm: start",
+      "detail": "npx http-server './dist'"
+    },
+
+    {
+      "type": "docker-build",
+      "label": "docker-build",
+      "platform": "node",
+      "dockerBuild": {
+        "dockerfile": "${workspaceFolder}/Dockerfile",
+        "context": "${workspaceFolder}",
+        "pull": true
+      }
     },
     {
-      "type": "npm",
-      "script": "Docker images",
-      "problemMatcher": [],
-      "label": "npm: Docker images",
-      "detail": "docker images"
+      "type": "docker-run",
+      "label": "docker-run: release",
+      "dependsOn": [
+        "docker-build"
+      ],
+      "platform": "node"
     },
     {
-      "type": "npm",
-      "script": "Docker build",
-      "group": "build",
-      "problemMatcher": [],
-      "label": "npm: Docker build",
-      "detail": "docker build . -t GesugaoSan/proxima.fun"
-    },
-    {
-      "type": "npm",
-      "script": "Docker run",
-      "problemMatcher": [],
-      "label": "npm: Docker run",
-      "detail": "docker run -p 8080:80 GesugaoSan/proxima.fun"
+      "type": "docker-run",
+      "label": "docker-run: debug",
+      "dependsOn": [
+        "docker-build"
+      ],
+      "dockerRun": {
+        "env": {
+          "DEBUG": "*",
+          "NODE_ENV": "development"
+        }
+      },
+      "node": {
+        "enableDebugging": true
+      }
     }
   ]
 }

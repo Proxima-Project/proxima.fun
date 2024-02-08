@@ -5,17 +5,19 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
     "preview": "vite preview",
+    "build": "vite build",
+    "start": "npx http-server . -p 8080 -c-1",
     "Docker images": "docker images",
     "Docker containers": "docker containers",
     "Docker build": "docker build . -t GesugaoSan/proxima.fun",
-    "Docker run": "docker run -p 8080:80 GesugaoSan/proxima.fun"
+    "Docker run": "docker run -p 8080:8080/tcp GesugaoSan/proxima.fun"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.5.1",
     "@fortawesome/free-brands-svg-icons": "^6.5.1",
     "@fortawesome/vue-fontawesome": "^3.0.6",
+    "http-server": "^14.1.1",
     "vue": "^3.4.15"
   },
   "devDependencies": {
