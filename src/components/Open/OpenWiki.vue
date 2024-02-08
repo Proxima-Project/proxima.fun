@@ -4,5 +4,5 @@ import ProjectInfo from './../ProjectInfo.vue'
 </script>
 
 <template>
-  <OpenURL display='Wiki' :url='`https://${ProjectInfo.wiki}/`' />
+  <OpenURL :url='`https://${ProjectInfo.wiki}/`' icon='wikipedia-w' />
 </template>

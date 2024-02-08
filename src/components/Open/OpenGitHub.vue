@@ -4,5 +4,5 @@ import ProjectInfo from './../ProjectInfo.vue'
 </script>
 
 <template>
-  <OpenURL display='GitHub' :url='`https://github.com/${ProjectInfo.github}/`' />
+  <OpenURL :url='`https://github.com/${ProjectInfo.github}/`' icon='github' />
 </template>

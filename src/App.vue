@@ -2,9 +2,6 @@
 <script setup lang="ts">
 import { library } from '@fortawesome/fontawesome-svg-core'
 import {
-  faTwitter,
-  faFacebook,
-  faStackOverflow,
   faGithub,
   faWikipediaW,
   faDiscord
@@ -19,9 +16,6 @@ import ProjectInfo from './components/ProjectInfo.vue'
 import SocialMediaLinks from "./components/SocialMediaLinks.vue"
 
 library.add(
-  faTwitter,
-  faFacebook,
-  faStackOverflow,
   faGithub,
   faWikipediaW,
   faDiscord
@@ -43,12 +37,8 @@ library.add(
       <video autoplay muted loop width='467' height='467' poster='@/assets/proxima4.png'>
         <source alt='Vue logo' class='logo' src='./assets/proxima5.webm' type='video/webm' />
       </video>
-      <HelloWorld class="centered" :msg='`${ProjectInfo.name}`' />
-    </div>
-
-    <div class="container wrapper">
       <video playsinline autoplay muted loop width='467' height='467' poster='@/assets/proxima4.png' id="bgvideo" >
-        <source src='./assets/proxima5.webm' type='video/webm'>
+        <source src='@/assets/proxima5.webm' type='video/webm'>
       </video>
       <HelloWorld class="centered" :msg='`${ProjectInfo.name}`' />
     </div>
@@ -56,9 +46,6 @@ library.add(
 
   <main>
     <!-- <TheWelcome /> -->
-    <OpenDiscord />
-    <OpenGitHub />
-    <OpenWiki />
 
     <!--
       https://fontawesome.com/docs/web/troubleshoot/#why-are-my-animated-icons-not-animating
@@ -68,10 +55,9 @@ library.add(
     <!-- <font-awesome-icon class="icon alt" fixed-width font-size=8em :icon="['fab', 'discord']" beat /> -->
     <!-- <div class="icon alt" fixed-width style="font-size: 8em; --fa-animation-duration: 5s; --fa-beat-scale: 0.9; margin-left: 10px;" > -->
     <div class="icon alt" fixed-width style="font-size: 8em; margin-left: 10px;" >
-      <font-awesome-icon :icon="['fab', 'discord']" />
-      <font-awesome-icon :icon="['fab', 'github']" />
-      <font-awesome-icon :icon="['fab', 'wikipedia-w']" />
-      <a href="https://vitejs.dev/" target="_blank" rel="noopener"><font-awesome-icon :icon="['fab', 'wikipedia-w']" /></a>
+      <OpenDiscord />
+      <OpenGitHub />
+      <OpenWiki />
     </div>
     <!-- <SocialMediaLinks title="@hrwebdevelopers" description="We build blazing-fast, beautiful websites for startups, small businesses and enterprises." /> -->
   </main>
@@ -83,7 +69,6 @@ library.add(
 .container {
   position: relative;
   text-align: center;
-  color: white;
 }
 
 /* Centered text */

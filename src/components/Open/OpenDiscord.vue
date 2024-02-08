@@ -4,5 +4,5 @@ import ProjectInfo from './../ProjectInfo.vue'
 </script>
 
 <template>
-  <OpenURL display='Discord' :url='`https://discord.gg/${ProjectInfo.discord}`' />
+  <OpenURL :url='`https://discord.gg/${ProjectInfo.discord}`' icon='discord' />
 </template>
