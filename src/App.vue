@@ -1,5 +1,15 @@
 
 <script setup lang="ts">
+import { library } from '@fortawesome/fontawesome-svg-core'
+import {
+  faTwitter,
+  faFacebook,
+  faStackOverflow,
+  faGithub,
+  faWikipediaW,
+  faDiscord
+} from '@fortawesome/free-brands-svg-icons'
+
 import HelloWorld from './components/HelloWorld.vue'
 import TheWelcome from './components/TheWelcome.vue'
 import OpenDiscord from './components/Open/OpenDiscord.vue'
@@ -8,6 +18,14 @@ import OpenWiki from './components/Open/OpenWiki.vue'
 import ProjectInfo from './components/ProjectInfo.vue'
 import SocialMediaLinks from "./components/SocialMediaLinks.vue"
 
+library.add(
+  faTwitter,
+  faFacebook,
+  faStackOverflow,
+  faGithub,
+  faWikipediaW,
+  faDiscord
+)
 </script>
 
 <script>
@@ -15,25 +33,65 @@ import SocialMediaLinks from "./components/SocialMediaLinks.vue"
 
 <template>
   <header>
-    <video autoplay muted loop width='500' height='500'>
+    <!-- <video autoplay muted loop width='467' height='467' poster='@/assets/proxima4.png'>
       <source alt='Vue logo' class='logo' src='./assets/proxima5.webm' type='video/webm' />
-    </video>
+    </video> -->
+
+    <!-- <div class="circular" v-bind:style="{ 'background-image': 'url(' + './assets/proxima5.webm' + ')' }"></div> -->
+
+    <div class="container wrapper">
+      <video autoplay muted loop width='467' height='467' poster='@/assets/proxima4.png'>
+        <source alt='Vue logo' class='logo' src='./assets/proxima5.webm' type='video/webm' />
+      </video>
+      <HelloWorld class="centered" :msg='`${ProjectInfo.name}`' />
+    </div>
+
+    <div class="container wrapper">
+      <video playsinline autoplay muted loop width='467' height='467' poster='@/assets/proxima4.png' id="bgvideo" >
+        <source src='./assets/proxima5.webm' type='video/webm'>
+      </video>
+      <HelloWorld class="centered" :msg='`${ProjectInfo.name}`' />
+    </div>
   </header>
 
   <main>
     <!-- <TheWelcome /> -->
-    <div class='wrapper'>
-      <HelloWorld :msg='`${ProjectInfo.name}`' />
-    </div>
     <OpenDiscord />
     <OpenGitHub />
     <OpenWiki />
-    <font-awesome-icon :icon="['fab', 'twitter']" class="icon alt"/>
-    <font-awesome-icon :icon="['fab', 'github']" class="icon alt" />
+
+    <!--
+      https://fontawesome.com/docs/web/troubleshoot/#why-are-my-animated-icons-not-animating
+      https://fontawesome.com/v6/docs/web/style/animate
+    -->
+
+    <!-- <font-awesome-icon class="icon alt" fixed-width font-size=8em :icon="['fab', 'discord']" beat /> -->
+    <!-- <div class="icon alt" fixed-width style="font-size: 8em; --fa-animation-duration: 5s; --fa-beat-scale: 0.9; margin-left: 10px;" > -->
+    <div class="icon alt" fixed-width style="font-size: 8em; margin-left: 10px;" >
+      <font-awesome-icon :icon="['fab', 'discord']" />
+      <font-awesome-icon :icon="['fab', 'github']" />
+      <font-awesome-icon :icon="['fab', 'wikipedia-w']" />
+      <a href="https://vitejs.dev/" target="_blank" rel="noopener"><font-awesome-icon :icon="['fab', 'wikipedia-w']" /></a>
+    </div>
     <!-- <SocialMediaLinks title="@hrwebdevelopers" description="We build blazing-fast, beautiful websites for startups, small businesses and enterprises." /> -->
   </main>
 </template>
 
 <style scoped>
+
+/* Container holding the image and the text */
+.container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+/* Centered text */
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
 </style>
