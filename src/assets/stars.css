@@ -22,10 +22,10 @@ animation: zoom 16s alternate infinite;
 }
 
 @keyframes zoom {
-  0%{
-      transform: scale(1);
+  0% {
+    transform: scale(1);
   }
-  100%{
-      transform: scale(1.5);
+  100% {
+    transform: scale(1.5);
   }
 }
