@@ -19,7 +19,6 @@
     {
       "type": "npm",
       "script": "install",
-      "group": "clean",
       "problemMatcher": [],
       "label": "npm: install",
       "detail": "install dependencies from package"
@@ -30,6 +29,35 @@
       "problemMatcher": [],
       "label": "npm: preview",
       "detail": "vite preview"
+    },
+    {
+      "type": "npm",
+      "script": "Docker containers",
+      "problemMatcher": [],
+      "label": "npm: Docker containers",
+      "detail": "docker containers"
+    },
+    {
+      "type": "npm",
+      "script": "Docker images",
+      "problemMatcher": [],
+      "label": "npm: Docker images",
+      "detail": "docker images"
+    },
+    {
+      "type": "npm",
+      "script": "Docker build",
+      "group": "build",
+      "problemMatcher": [],
+      "label": "npm: Docker build",
+      "detail": "docker build . -t GesugaoSan/proxima.fun"
+    },
+    {
+      "type": "npm",
+      "script": "Docker run",
+      "problemMatcher": [],
+      "label": "npm: Docker run",
+      "detail": "docker run -p 8080:80 GesugaoSan/proxima.fun"
     }
   ]
 }

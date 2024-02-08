@@ -9,7 +9,7 @@ defineProps({
 
 <template>
   <div class="greetings">
-    <h1 class="green"><a href="https://en.wikipedia.org/wiki/Proxima_Centauri" target="_blank" rel="noopener">{{ msg }}</a></h1>
+    <h1 class="green"><a href="https://ru.wikipedia.org/wiki/Проксима_Центавра" target="_blank" rel="noopener">{{ msg }}</a></h1>
   </div>
 </template>
 
