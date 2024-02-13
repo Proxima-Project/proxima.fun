@@ -32,9 +32,10 @@
       "label": "Docker: Build Only",
       "platform": "node",
       "dockerBuild": {
+        "tag": "Gesugao-san/proxima.fun",
         "dockerfile": "${workspaceFolder}/Dockerfile",
         "context": "${workspaceFolder}",
-        "pull": true
+        "pull": true,
       }
     },
     {
@@ -43,6 +44,15 @@
       "dependsOn": [
         "docker-build"
       ],
+      "dockerRun": {
+        "image": "Gesugao-san/proxima.fun",
+        "containerName": "proxima.fun",
+        "ports": [{
+          "containerPort": 8080,
+          "hostPort": 8080,
+          "protocol": "tcp",
+        }]
+      },
       "platform": "node"
     },
     {
@@ -52,6 +62,13 @@
         "docker-build"
       ],
       "dockerRun": {
+        "image": "Gesugao-san/proxima.fun",
+        "containerName": "proxima.fun",
+        "ports": [{
+          "containerPort": 8080,
+          "hostPort": 8080,
+          "protocol": "tcp",
+        }],
         "env": {
           "DEBUG": "*",
           "NODE_ENV": "development"

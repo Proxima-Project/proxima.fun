@@ -1,10 +1,18 @@
 # syntax=docker/dockerfile:1
 
+
 ### Подтягиваем Node.js версии 21.
 ### Версия постфикса Alpine — минифицированная.
 FROM node:21-alpine
 
-LABEL name="gesugao-san/proxima.fun"
+### Устанавливаем кодировку.
+#RUN apt update && apt -y install locales && locale-gen en_US.UTF-8
+ENV LANG en_US.UTF-8
+ENV LANGUAGE en_US:en
+ENV LC_ALL en_US.UTF-8
+
+### Информация об этом пакете.
+LABEL name="Gesugao-san/proxima.fun"
 LABEL website="proxima.fun"
 
 RUN echo "Node:" & node -v
@@ -37,6 +45,7 @@ COPY [\
 
 #RUN npm install --production --silent && mv node_modules ../
 RUN npm install --production --silent
+
 
 ### Копируем файлы и каталоги проекта в текущий рабочий каталог.
 COPY . .
