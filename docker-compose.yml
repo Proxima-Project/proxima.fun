@@ -13,9 +13,11 @@ version: '3.4'
 
 services:
   proxima.fun:
-    image: gesugaosan/proxima.fun
+    image: gesugaosan/proxima.fun:latest
     build:
       context: .
+      tags:
+        - "latest"
       dockerfile: ./Dockerfile
     environment:
       NODE_ENV: production
