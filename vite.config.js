@@ -20,7 +20,7 @@ export default defineConfig({
 
   clearScreen: false,
   server: {
-    //host: '0.0.0.0',  // OK
+    host: '0.0.0.0',  // CRITICAL, OK
     //host: true,  // OK
     //host: 'localhost',  // NOT FOR PUBLIC
     port: 80,  // CRITICAL
