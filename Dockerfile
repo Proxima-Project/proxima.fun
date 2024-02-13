@@ -16,7 +16,7 @@ LABEL name="Gesugao-san/proxima.fun"
 LABEL website="proxima.fun"
 
 RUN echo "Node:" & node -v
-RUN echo "PM:" & npm -v
+RUN echo "NPM:" & npm -v
 
 ARG buildno
 ARG gitcommithash
