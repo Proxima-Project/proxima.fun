@@ -33,12 +33,13 @@ export default defineConfig({
       //host: 'localhost',  // CRITICAL, OK
       //host: true,  // LOOP
       //host: '0.0.0.0',  // LOOP
-      protocol: 'ws',  // OK
+      protocol: 'wss',  // OK
       //protocol: 'wss',  // LOOP
       port: 80,
       //port: 443,  // OK
       //Port: 443,  // OK
       //port: 3000,
+      clientPort: 80,
       //clientPort: 3001,
       //clientPort: 443,  // LOOP
     },
