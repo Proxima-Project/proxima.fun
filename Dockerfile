@@ -57,7 +57,7 @@ EXPOSE 80:80/tcp
 #EXPOSE 8080:8080/tcp
 
 ### WebSocket
-EXPOSE 443:443/tcp
+#EXPOSE 443:443/tcp
 
 #
 #EXPOSE 3001:3000/tcp

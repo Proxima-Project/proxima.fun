@@ -14,23 +14,26 @@ version: '3.8'
 services:
   proxima.fun:
     image: gesugaosan/proxima.fun:latest
+    container_name: proxima.fun #proxima-mainpage
     build:
       context: .
-      tags:
-        - 'latest'
+      tags: ['latest']
       dockerfile: ./Dockerfile
     environment:
       NODE_ENV: production
-      WDS_SOCKET_PORT: 443
+      #WDS_SOCKET_PORT: 443
+    # https://docs.docker.com/compose/compose-file/compose-file-v3/#ports
     ports:
-      - target: 80
-        published: 80
+      - name: 'HTTP'
+        target: 8091  # the port inside the container
+        published: 80  # the publicly exposed port
         protocol: tcp
         mode: host
-      - target: 443
-        published: 443
-        protocol: tcp
-        mode: host
+      #- name: "WebSocket"
+        #target: 443  # the port inside the container
+        #published: 443  # the publicly exposed port
+        #protocol: tcp
+        #mode: host
       #- 80:80
       #- 8080:8080
       #- 443:443
