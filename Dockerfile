@@ -54,7 +54,7 @@ RUN npm install --production --silent
 COPY . .
 
 ### Сообщаем Docker'у, что для работы нам нужен порт.
-EXPOSE 80:80
+EXPOSE 8080:8080
 
 ### Устанавливаем владельцем node для рабочего каталога рекурсивно.
 RUN chown -R node /usr/src/app
