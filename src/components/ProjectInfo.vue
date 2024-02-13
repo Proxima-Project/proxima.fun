@@ -2,7 +2,8 @@
 export default {
   name: 'Proxima',
   discord: '4EDMR24r9m',
-  wiki: 'wiki.proxima.fun',
   github: 'Proxima-Project',
+  wiki: 'wiki.proxima.fun',
+  sponsorship: 'Phoenix404'
 };
 </script>

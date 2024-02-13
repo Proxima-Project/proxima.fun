@@ -6,21 +6,24 @@ import {
   faWikipediaW,
   faDiscord
 } from '@fortawesome/free-brands-svg-icons'
+import {faHandHoldingHeart} from '@fortawesome/free-solid-svg-icons'
 
 import ProjectInfo from './components/ProjectInfo.vue'
 
 import OpenDiscord from './components/Open/OpenDiscord.vue'
 import OpenGitHub from './components/Open/OpenGitHub.vue'
 import OpenWiki from './components/Open/OpenWiki.vue'
+import OpenSponsorship from './components/Open/OpenSponsorship.vue'
 
 import HelloWorld from './components/HelloWorld.vue'
 import TheWelcome from './components/TheWelcome.vue'
 import SocialMediaLinks from './components/SocialMediaLinks.vue'
 
 library.add(
+  faDiscord,
   faGithub,
   faWikipediaW,
-  faDiscord
+  faHandHoldingHeart
 )
 </script>
 
@@ -67,6 +70,7 @@ library.add(
       <OpenDiscord />
       <OpenGitHub />
       <OpenWiki />
+      <OpenSponsorship />
     </div>
     <!-- <SocialMediaLinks title='@hrwebdevelopers' description='We build blazing-fast, beautiful websites for startups, small businesses and enterprises.' /> -->
   </main>
