@@ -29,11 +29,21 @@ services:
         published: 8091  # the publicly exposed port
         protocol: tcp
         mode: host
-      #- name: "WebSocket"
-        #target: 8091  # the port inside the container
-        #published: 443  # the publicly exposed port
-        #protocol: tcp
-        #mode: host
+      - name: "WebSocket (1)"
+        target: 443  # the port inside the container
+        published: 443  # the publicly exposed port
+        protocol: tcp
+        mode: host
+      - name: "WebSocket (2)"
+        target: 3000  # the port inside the container
+        published: 3000  # the publicly exposed port
+        protocol: tcp
+        mode: host
+      - name: "Vite5"
+        target: 5173  # the port inside the container
+        published: 5173  # the publicly exposed port
+        protocol: tcp
+        mode: host
       #- 80:80
       #- 8080:8080
       #- 443:443

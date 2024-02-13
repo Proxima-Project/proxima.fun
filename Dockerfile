@@ -57,16 +57,16 @@ EXPOSE 80:8091/tcp
 ### HTTP (2)
 #EXPOSE 8080:8080/tcp
 
-### WebSocket
-#EXPOSE 443:443/tcp
+### WebSocket (1)
+EXPOSE 443:443/tcp
 #EXPOSE 8091:443/tcp
 
-#
+### WebSocket (2)
 #EXPOSE 3001:3000/tcp
-#EXPOSE 3000:3000/tcp
+EXPOSE 3000:3000/tcp
 
 ### Vite ver. 5 default
-#EXPOSE 5173:5173/tcp
+EXPOSE 5173:5173/tcp
 
 ### Vite (ver. <5) default
 #EXPOSE 24678:24678/tcp

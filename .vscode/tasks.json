@@ -43,15 +43,23 @@
       "dockerRun": {
         "image": "gesugaosan/proxima.fun",
         "containerName": "proxima.fun",
-        "ports": [{
+        "ports": [{ // HTTP
           "containerPort": 80, //The port number bound on the container. Required.
           "hostPort": 8091, //The port number bound on the host.
           "protocol": "tcp",
-        }/* ,{
-          "containerPort": 8091,
+        } ,{ // WebSocket (1)
+          "containerPort": 443,
           "hostPort": 443,
           "protocol": "tcp",
-        } */],
+        } ,{ // WebSocket (2)
+          "containerPort": 3000,
+          "hostPort": 3000,
+          "protocol": "tcp",
+        } ,{ // Vite5
+          "containerPort": 5173,
+          "hostPort": 5173,
+          "protocol": "tcp",
+        }],
         "env": {
           //"DEBUG": "*",
           "NODE_ENV": "production"
