@@ -20,26 +20,27 @@ export default defineConfig({
 
   clearScreen: false,
   server: {
-    host: '0.0.0.0',  // OK
+    //host: '0.0.0.0',  // OK
     //host: true,  // OK
     //host: 'localhost',  // NOT FOR PUBLIC
     //port: 8080,  // CRITICAL
-    port: 80,  // CRITICAL
-    clientPort: 80,
+    //port: 80,  // CRITICAL
+    //clientPort: 80,
     //https: false,  // UNKNOWN
-    strictPort: true,  // OK
+    //strictPort: true,  // OK
+    //// https://vitejs.dev/config/server-options.html#server-hmr
     //hmr: false
     hmr: {
-      //host: 'localhost',  // CRITICAL, OK
-      //host: true,  // LOOP
+      host: 'localhost',  // CRITICAL, OK
       //host: '0.0.0.0',  // LOOP
-      protocol: 'wss',  // OK
+      //host: true,  // LOOP
+      protocol: 'ws',  // OK
       //protocol: 'wss',  // LOOP
-      port: 80,
+      //port: 8080,
       //port: 443,  // OK
       //Port: 443,  // OK
       //port: 3000,
-      clientPort: 80,
+      //clientPort: 8080,
       //clientPort: 3001,
       //clientPort: 443,  // LOOP
     },

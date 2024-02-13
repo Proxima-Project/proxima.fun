@@ -25,12 +25,12 @@ services:
     # https://docs.docker.com/compose/compose-file/compose-file-v3/#ports
     ports:
       - name: 'HTTP'
-        target: 8091  # the port inside the container
-        published: 80  # the publicly exposed port
+        target: 80  # the port inside the container
+        published: 8091  # the publicly exposed port
         protocol: tcp
         mode: host
       #- name: "WebSocket"
-        #target: 443  # the port inside the container
+        #target: 8091  # the port inside the container
         #published: 443  # the publicly exposed port
         #protocol: tcp
         #mode: host

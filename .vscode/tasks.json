@@ -44,11 +44,11 @@
         "image": "gesugaosan/proxima.fun",
         "containerName": "proxima.fun",
         "ports": [{
-          "containerPort": 80,
-          "hostPort": 80,
+          "containerPort": 80, //The port number bound on the container. Required.
+          "hostPort": 8091, //The port number bound on the host.
           "protocol": "tcp",
         }/* ,{
-          "containerPort": 443,
+          "containerPort": 8091,
           "hostPort": 443,
           "protocol": "tcp",
         } */],
