@@ -19,6 +19,7 @@ env:
   REGISTRY: docker.io #ghcr.io
   # github.repository as <account>/<repo>
   IMAGE_NAME: gesugaosan/proxima.fun:latest #$github.repository
+  WDS_SOCKET_PORT: 443
 
 jobs:
   push_to_registry:

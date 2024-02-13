@@ -7,9 +7,10 @@ FROM node:21-alpine
 
 ### Устанавливаем кодировку.
 #RUN apt update && apt -y install locales && locale-gen en_US.UTF-8
-ENV LANG en_US.UTF-8
-ENV LANGUAGE en_US:en
-ENV LC_ALL en_US.UTF-8
+ENV LANG=en_US.UTF-8
+ENV LANGUAGE=en_US:en
+ENV LC_ALL=en_US.UTF-8
+ENV WDS_SOCKET_PORT=443
 
 ### Информация об этом пакете.
 LABEL name="gesugaosan/proxima.fun"
@@ -53,7 +54,7 @@ RUN npm install --production --silent
 COPY . .
 
 ### Сообщаем Docker'у, что для работы нам нужен порт.
-EXPOSE 8080:8080
+EXPOSE 80:80
 
 ### Устанавливаем владельцем node для рабочего каталога рекурсивно.
 RUN chown -R node /usr/src/app

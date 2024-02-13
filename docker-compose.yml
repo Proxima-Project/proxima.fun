@@ -17,13 +17,14 @@ services:
     build:
       context: .
       tags:
-        - "latest"
+        - 'latest'
       dockerfile: ./Dockerfile
     environment:
       NODE_ENV: production
+      WDS_SOCKET_PORT: 443
     ports:
-      - target: 8080
-        published: 8080
+      - target: 80
+        published: 80
         mode: host
 
 # The commented out section below is an example of how to define a PostgreSQL
