@@ -8,7 +8,7 @@
 # database or a cache. For examples, see the Awesome Compose repository:
 # https://github.com/docker/awesome-compose
 
-version: '3.4'
+version: '3.8'
 #name: proxima-fun
 
 services:
@@ -23,9 +23,20 @@ services:
       NODE_ENV: production
       WDS_SOCKET_PORT: 443
     ports:
-      - target: 8080
-        published: 8080
+      - target: 80
+        published: 80
+        protocol: tcp
         mode: host
+      - target: 443
+        published: 443
+        protocol: tcp
+        mode: host
+      #- 80:80
+      #- 8080:8080
+      #- 443:443
+      #- 3001:3000
+      #- 5173:5173
+      #- 24678:24678
 
 # The commented out section below is an example of how to define a PostgreSQL
 # database that your application can use. `depends_on` tells Docker Compose to

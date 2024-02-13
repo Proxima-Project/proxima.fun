@@ -18,15 +18,28 @@ export default defineConfig({
     }
   },
 
+  clearScreen: false,
   server: {
-    host: true,
-    port: 8080,
-    https: false,
-    strictPort: true,
+    host: '0.0.0.0',  // OK
+    //host: true,  // OK
+    //host: 'localhost',  // NOT FOR PUBLIC
+    //port: 8080,  // CRITICAL
+    port: 80,  // CRITICAL
+    clientPort: 80,
+    //https: false,  // UNKNOWN
+    strictPort: true,  // OK
+    //hmr: false
     hmr: {
-      host: true,
-      protocol: 'wss',
-      clientPort: 443,
+      //host: 'localhost',  // CRITICAL, OK
+      //host: true,  // LOOP
+      //host: '0.0.0.0',  // LOOP
+      //protocol: 'ws',  // OK
+      //protocol: 'wss',  // LOOP
+      port: 443,  // OK
+      //Port: 443,  // OK
+      //port: 3000,
+      //clientPort: 3001,
+      clientPort: 443,  // LOOP
     },
   }
 })

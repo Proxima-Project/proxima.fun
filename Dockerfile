@@ -34,12 +34,7 @@ ENV NODE_ENV=production
 WORKDIR /usr/src/app
 
 ### Копируем файлы (при наличии).
-COPY [\
-  "package.json", \
-  "package-lock.json*", \
-  "npm-shrinkwrap.json*", \
-  "./"\
-]
+COPY ["package.json", "package-lock.json*", "npm-shrinkwrap.json*", "./"]
 
 ### Устанавливаем зависимости проекта.
 #RUN apt-get update && apt-get install -y nodejs npm && rm -rf /var/lib/apt/lists/*
@@ -54,7 +49,25 @@ RUN npm install --production --silent
 COPY . .
 
 ### Сообщаем Docker'у, что для работы нам нужен порт.
-EXPOSE 8080:8080
+
+### HTTP (1)
+EXPOSE 80:80/tcp
+
+### HTTP (2)
+#EXPOSE 8080:8080/tcp
+
+### WebSocket
+EXPOSE 443:443/tcp
+
+#
+#EXPOSE 3001:3000/tcp
+#EXPOSE 3000:3000/tcp
+
+### Vite ver. 5 default
+#EXPOSE 5173:5173/tcp
+
+### Vite (ver. <5) default
+#EXPOSE 24678:24678/tcp
 
 ### Устанавливаем владельцем node для рабочего каталога рекурсивно.
 RUN chown -R node /usr/src/app
