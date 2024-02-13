@@ -2,34 +2,30 @@
   "version": "2.0.0",
   "tasks": [
     {
+      "label": "Vite: build",
+      "detail": "Build for production.",
       "type": "npm",
       "script": "build",
       "group": "build",
-      "label": "Vite: build",
-      "detail": "Build for production."
-    },
-    {
+      "problemMatcher": []
+    }, {
+      "label": "Vite: preview",
+      "detail": "Locally preview production build.",
       "type": "npm",
       "script": "preview",
-      "label": "Vite: preview",
-      "detail": "Locally preview production build."
-    },
-    {
-      "type": "npm",
-      "script": "dev",
+      "problemMatcher": []
+    }, {
       "label": "Vite: dev",
       "detail": "Start dev server, aliases: `vite dev`, `vite serve`.",
+      "type": "npm",
+      "script": "dev",
       "problemMatcher": []
     },
+
     {
-      "type": "npm",
-      "script": "install",
-      "label": "NPM install",
-      "detail": "Install dependencies from package."
-    },
-    {
+      "label": "Docker: Compile Build",
+      "detail": "Create Docker Build.",
       "type": "docker-build",
-      "label": "Docker: Build Only",
       "platform": "node",
       "dockerBuild": {
         "tag": "Gesugao-san/proxima.fun",
@@ -38,29 +34,12 @@
         "pull": true,
       }
     },
+
     {
+      "label": "Docker: Compile Container (production)",
+      "detail": "Create Docker Container. Requires Docker Build!",
       "type": "docker-run",
-      "label": "Docker: Build Container (release)",
-      "dependsOn": [
-        "docker-build"
-      ],
-      "dockerRun": {
-        "image": "Gesugao-san/proxima.fun",
-        "containerName": "proxima.fun",
-        "ports": [{
-          "containerPort": 8080,
-          "hostPort": 8080,
-          "protocol": "tcp",
-        }]
-      },
-      "platform": "node"
-    },
-    {
-      "type": "docker-run",
-      "label": "Docker: Build Container (debug)",
-      "dependsOn": [
-        "docker-build"
-      ],
+      "dependsOn": ["docker-build"],
       "dockerRun": {
         "image": "Gesugao-san/proxima.fun",
         "containerName": "proxima.fun",
@@ -70,13 +49,14 @@
           "protocol": "tcp",
         }],
         "env": {
-          "DEBUG": "*",
-          "NODE_ENV": "development"
+          //"DEBUG": "*",
+          "NODE_ENV": "production"
         }
       },
       "node": {
-        "enableDebugging": true
-      }
+        "enableDebugging": false,
+      },
+      "platform": "node"
     }
   ]
 }
