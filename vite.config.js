@@ -24,9 +24,8 @@ export default defineConfig({
     //host: true,  // OK
     //host: 'localhost',  // NOT FOR PUBLIC
     port: 80,  // CRITICAL
-    clientPort: 80,
     //https: false,  // UNKNOWN
-    //strictPort: true,  // OK
+    strictPort: true,  // OK
     //// https://vitejs.dev/config/server-options.html#server-hmr
     //hmr: false
     hmr: {

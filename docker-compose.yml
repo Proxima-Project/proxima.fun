@@ -24,7 +24,12 @@ services:
       #WDS_SOCKET_PORT: 443
     # https://docs.docker.com/compose/compose-file/compose-file-v3/#ports
     ports:
-      - name: 'HTTP'
+      - name: 'HTTP (1)'
+        target: 80  # the port inside the container
+        published: 80  # the publicly exposed port
+        protocol: tcp
+        mode: host
+      - name: 'HTTP (2)'
         target: 80  # the port inside the container
         published: 8091  # the publicly exposed port
         protocol: tcp
@@ -39,6 +44,11 @@ services:
         published: 3000  # the publicly exposed port
         protocol: tcp
         mode: host
+      #- name: "WebSocket (3)"
+        #target: 443  # the port inside the container
+        #published: 8091  # the publicly exposed port
+        #protocol: tcp
+        #mode: host
       - name: "Vite5"
         target: 5173  # the port inside the container
         published: 5173  # the publicly exposed port

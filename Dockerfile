@@ -51,7 +51,7 @@ COPY . .
 ### Сообщаем Docker'у, что для работы нам нужен порт.
 
 ### HTTP (1)
-#EXPOSE 80:80/tcp
+EXPOSE 80:80/tcp
 EXPOSE 80:8091/tcp
 
 ### HTTP (2)
@@ -59,7 +59,7 @@ EXPOSE 80:8091/tcp
 
 ### WebSocket (1)
 EXPOSE 443:443/tcp
-#EXPOSE 8091:443/tcp
+#EXPOSE 443:8091/tcp
 
 ### WebSocket (2)
 #EXPOSE 3001:3000/tcp
