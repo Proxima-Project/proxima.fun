@@ -16,9 +16,9 @@ on:
 
 env:
   # Use docker.io for Docker Hub if empty
-  #REGISTRY: ghcr.io
+  REGISTRY: docker.io #ghcr.io
   # github.repository as <account>/<repo>
-  IMAGE_NAME: "Gesugao-san/proxima.fun" #$github.repository
+  IMAGE_NAME: "gesugaosan/proxima.fun" #$github.repository
 
 jobs:
   push_to_registry:
