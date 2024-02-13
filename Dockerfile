@@ -1,26 +1,54 @@
-FROM node:lts-alpine
+# syntax=docker/dockerfile:1
 
+### Подтягиваем Node.js версии 21.
+### Версия постфикса Alpine — минифицированная.
+FROM node:21-alpine
+
+LABEL name="gesugao-san/proxima.fun"
+LABEL website="proxima.fun"
+
+RUN echo "Node:" & node -v
+RUN echo "PM:" & npm -v
+
+ARG buildno
+ARG gitcommithash
+
+RUN echo "Build number: $buildno"
+RUN echo "Based on commit: $gitcommithash"
+
+### Устанавливаем режим окружения Node.js.
 ENV NODE_ENV=production
 
-# делаем каталог '/usr/src/app' текущим рабочим каталогом
+### Указываем каталог текущий рабочий каталог в образе Docker'а.
 WORKDIR /usr/src/app
 
-# копируем оба 'package.json', 'package-lock.json' и 'npm-shrinkwrap.json' (если есть)
-COPY ["package.json", "package-lock.json*", "npm-shrinkwrap.json*", "./"]
+### Копируем файлы (при наличии).
+COPY [\
+  "package.json", \
+  "package-lock.json*", \
+  "npm-shrinkwrap.json*", \
+  "./"\
+]
 
-# устанавливаем зависимости проекта
+### Устанавливаем зависимости проекта.
 #RUN apt-get update && apt-get install -y nodejs npm && rm -rf /var/lib/apt/lists/*
-RUN npm install -g npm --silent
+
+#RUN npm install -g npm
+
 #RUN npm install --production --silent && mv node_modules ../
 RUN npm install --production --silent
 
-# копируем файлы и каталоги проекта в текущий рабочий каталог
+### Копируем файлы и каталоги проекта в текущий рабочий каталог.
 COPY . .
 
+### Сообщаем Docker'у, что для работы нам нужен порт.
 EXPOSE 8080
 
+### Устанавливаем владельцем node для рабочего каталога рекурсивно.
 RUN chown -R node /usr/src/app
 
+### Set the user to use when running this image.
 USER node
 
+### Запуск приложения из 'package.json'
 CMD ["npm", "start"]
