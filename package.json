@@ -7,8 +7,8 @@
     "build": "vite build",
     "preview": "vite preview",
     "dev": "vite",
-    "docker-build": "docker build . -t \"Gesugao-san/proxima.fun\"",
-    "docker-run": "docker run -p 8080:8080/tcp \"Gesugao-san/proxima.fun\""
+    "docker-build": "docker build . -t \"gesugaosan/proxima.fun\"",
+    "docker-run": "docker run -p 8080:8080/tcp \"gesugaosan/proxima.fun\""
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.5.1",

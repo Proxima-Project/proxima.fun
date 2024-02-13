@@ -12,8 +12,10 @@ ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
 
 ### Информация об этом пакете.
-LABEL name="Gesugao-san/proxima.fun"
+LABEL name="gesugaosan/proxima.fun"
 LABEL website="proxima.fun"
+LABEL Name="gesugaosan/proxima.fun"
+LABEL Website="proxima.fun"
 
 RUN echo "Node:" & node -v
 RUN echo "NPM:" & npm -v

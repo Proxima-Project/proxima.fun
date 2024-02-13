@@ -28,7 +28,7 @@
       "type": "docker-build",
       "platform": "node",
       "dockerBuild": {
-        "tag": "Gesugao-san/proxima.fun",
+        "tag": "gesugaosan/proxima.fun",
         "dockerfile": "${workspaceFolder}/Dockerfile",
         "context": "${workspaceFolder}",
         "pull": true,
@@ -41,7 +41,7 @@
       "type": "docker-run",
       "dependsOn": ["docker-build"],
       "dockerRun": {
-        "image": "Gesugao-san/proxima.fun",
+        "image": "gesugaosan/proxima.fun",
         "containerName": "proxima.fun",
         "ports": [{
           "containerPort": 8080,

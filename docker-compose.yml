@@ -13,7 +13,7 @@ version: '3.4'
 
 services:
   proxima.fun:
-    image: gesugao-san/proxima.fun
+    image: gesugaosan/proxima.fun
     build:
       context: .
       dockerfile: ./Dockerfile
