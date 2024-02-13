@@ -39,7 +39,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5.5.1
         with:
-          images: ${{ env.IMAGE_NAME }} #my-docker-hub-namespace/my-docker-hub-repository
+          images: ${{ env.IMAGE_NAME }}
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v5.1.0
@@ -48,5 +48,5 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}
+          tags: ${{ env.IMAGE_NAME }} # $ {{ steps.meta.outputs.tags }}
+          #labels: $ {{ steps.meta.outputs.labels }}
