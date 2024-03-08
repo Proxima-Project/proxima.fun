@@ -4,5 +4,5 @@ import ProjectInfo from './../ProjectInfo.vue'
 </script>
 
 <template>
-  <OpenURL :url='`https://donate.qiwi.com/payin/${ProjectInfo.sponsorship}/`' icon='hand-holding-heart' />
+  <OpenURL :url='`https://donationalerts.com/r/${ProjectInfo.sponsorship}/`' icon='hand-holding-heart' />
 </template>

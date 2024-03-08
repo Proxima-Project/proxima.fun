@@ -4,6 +4,6 @@ export default {
   discord: '4EDMR24r9m',
   github: 'Proxima-Project',
   wiki: 'wiki.proxima.fun',
-  sponsorship: 'Phoenix404'
+  sponsorship: 'officersoftheart'
 };
 </script>
